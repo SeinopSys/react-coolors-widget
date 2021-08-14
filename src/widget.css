@@ -62,7 +62,10 @@
       }
 
       &.clickable {
-        cursor: pointer;
+        &,
+        .color-code {
+          cursor: pointer;
+        }
       }
 
       &.is-light .color-code {
@@ -72,7 +75,6 @@
       .color-code {
         all: initial;
         color: var(--react-coolors-color-text-dark);
-        cursor: pointer;
         display: block;
         font-family: var(--react-coolors-color-text-font);
         font-size: var(--react-coolors-color-font-size);
