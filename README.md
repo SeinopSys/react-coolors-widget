@@ -71,3 +71,5 @@ For future-proofing (and to support potential alternative linking methods), the 
 
 * a `colors` prop, which is an array of normalized HEX colors (3 character long values are expanded to 6, and all values will have the `#` prefix)
 * `children`, which will be the link text
+
+Besides these properties, the widget's root element is a simple `<div>` under the hood, so you can also pass any attributes that you could give to a regular `<div>` element as additional props to this component, and it will be added to the rendered element.

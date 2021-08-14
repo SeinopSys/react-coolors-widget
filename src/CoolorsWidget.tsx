@@ -1,5 +1,6 @@
-import type { FunctionComponent, HTMLAttributes } from 'react';
-import { useMemo } from 'react';
+import classNames from 'classnames';
+import type { ForwardRefRenderFunction, HTMLAttributes } from 'react';
+import { forwardRef, useMemo } from 'react';
 import { Colors } from './Colors';
 import { CoolorsLinkComponent, DefaultLinkComponent } from './DefaultLinkComponent';
 import type { InfoProps } from './Info';
@@ -10,36 +11,25 @@ import styles from './widget.scss';
 
 export type CoolorsWidgetProps = HTMLAttributes<HTMLDivElement> & InfoProps & {
   colors: string[];
-  LinkComponent: CoolorsLinkComponent
+  LinkComponent?: CoolorsLinkComponent
   linkText?: string;
 };
 
-export const CoolorsWidget: FunctionComponent<CoolorsWidgetProps> = ({
+const CoolorsWidgetComponent: ForwardRefRenderFunction<HTMLDivElement, CoolorsWidgetProps> = ({
   LinkComponent = DefaultLinkComponent,
   colors,
   linkText = 'View on Coolors',
   paletteName,
   ...divAttributes
-}) => {
-  const {
-    className,
-    ...restAttributes
-  } = divAttributes;
-
-  const classNameAttr = useMemo(() => {
-    let finalClassName = styles.coolorsPaletteWidget;
-    if (typeof className === 'string') {
-      finalClassName += `${finalClassName} ${className}`;
-    }
-    return finalClassName;
-  }, [className]);
+}, ref) => {
+  const { className, ...restAttributes } = divAttributes;
 
   const normalizedColors = useMemo(() => colors.map(normalizeColor), [colors]);
 
   if (normalizedColors.length < 1) return null;
 
   return (
-    <div {...restAttributes} className={classNameAttr}>
+    <div {...restAttributes} className={classNames(styles.coolorsPaletteWidget, className)} ref={ref}>
       <Colors colors={normalizedColors} />
       <Info paletteName={paletteName}>
         <LinkComponent colors={normalizedColors}>{linkText}</LinkComponent>
@@ -47,3 +37,5 @@ export const CoolorsWidget: FunctionComponent<CoolorsWidgetProps> = ({
     </div>
   );
 };
+
+export const CoolorsWidget = forwardRef(CoolorsWidgetComponent);
