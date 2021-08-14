@@ -1,0 +1,113 @@
+/* Default variables */
+:root {
+  --react-coolors-border-radius: 14px;
+  --react-coolors-color-shadow: rgba(0, 0, 0, 0.08);
+  --react-coolors-color-text-dark: #fff;
+  --react-coolors-color-text-light: #000;
+  --react-coolors-font-size: 14px;
+  --react-coolors-hover-basis: 80px;
+  --react-coolors-info-height: 36px;
+  --react-coolors-link: #06f;
+  --react-coolors-widget-font: inherit;
+  --react-coolors-widget-bg: #fff;
+  --react-coolors-widget-height: 150px;
+  --react-coolors-widget-shadow: rgba(0, 0, 0, 0.11);
+}
+
+.coolors-palette-widget {
+  all: initial;
+  background: var(--react-coolors-widget-bg);
+  border-radius: var(--react-coolors-border-radius);
+  box-shadow: inset var(--react-coolors-widget-shadow) 0 0 0 1px;
+  display: block;
+  height: var(--react-coolors-widget-height);
+  overflow: hidden;
+
+  .colors {
+    display: flex;
+    height: calc(var(--react-coolors-widget-height) - var(--react-coolors-info-height));
+    width: 100%;
+
+    .color-box {
+      box-shadow: inset var(--react-coolors-color-shadow) 0 1px, inset var(--react-coolors-color-shadow) 0 -1px;
+      cursor: pointer;
+      flex-basis: 1px;
+      flex-grow: 1;
+      overflow: hidden;
+      position: relative;
+      transition: all 0.1s ease-in-out;
+
+      &:first-child {
+        border-radius: var(--react-coolors-border-radius) 0 0;
+        box-shadow: inset var(--react-coolors-color-shadow) 1px 1px, inset var(--react-coolors-color-shadow) 0 -1px;
+      }
+
+      &:last-child {
+        border-radius: 0 var(--react-coolors-border-radius) 0 0;
+        box-shadow: inset var(--react-coolors-color-shadow) -1px 1px, inset var(--react-coolors-color-shadow) 0 -1px;
+      }
+
+      &:hover {
+        flex-basis: var(--react-coolors-hover-basis);
+
+        .color-code {
+          opacity: 1;
+        }
+      }
+
+      &.is-light .color-code {
+        color: var(--react-coolors-color-text-light);
+      }
+
+      .color-code {
+        all: initial;
+        color: var(--react-coolors-color-text-dark);
+        cursor: pointer;
+        display: block;
+        font-family: sans-serif;
+        font-size: 15px;
+        -webkit-font-smoothing: antialiased;
+        font-weight: 600;
+        margin-top: -7px;
+        opacity: 0;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        transition: all 0.1s ease-in-out;
+        width: 100%;
+      }
+    }
+  }
+
+  .info {
+    display: flex;
+    height: var(--react-coolors-info-height);
+    justify-content: space-between;
+    padding: 0 15px;
+    position: relative;
+  }
+
+  .info-name {
+    all: initial;
+    font-size: var(--react-coolors-font-size);
+    -webkit-font-smoothing: antialiased;
+    line-height: var(--react-coolors-info-height);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .info-link {
+    color: var(--react-coolors-link);
+    cursor: pointer;
+    font-size: var(--react-coolors-font-size);
+    line-height: var(--react-coolors-info-height);
+    margin-left: 20px;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

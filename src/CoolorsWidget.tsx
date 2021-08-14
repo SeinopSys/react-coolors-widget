@@ -7,7 +7,7 @@ import type { InfoProps } from './Info';
 import { Info } from './Info';
 import { normalizeColor } from './utils';
 
-import styles from './widget.scss';
+import styles from './widget.css';
 
 export type CoolorsWidgetProps = HTMLAttributes<HTMLDivElement> & InfoProps & {
   colors: string[];

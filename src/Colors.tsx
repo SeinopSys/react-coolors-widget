@@ -1,7 +1,7 @@
 import type { FunctionComponent } from 'react';
 import { Color } from './Color';
 import { HexColor } from './utils';
-import styles from './widget.scss';
+import styles from './widget.css';
 
 export interface ColorsProps {
   colors: HexColor[];

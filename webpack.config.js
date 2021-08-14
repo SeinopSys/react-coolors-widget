@@ -1,6 +1,5 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/index.ts',
@@ -18,7 +17,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.css$/,
         exclude: /node_modules/,
         use: [
           {
@@ -28,11 +27,12 @@ module.exports = {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
-              modules: true,
+              modules: {
+                exportLocalsConvention: 'camelCaseOnly',
+              },
             },
           },
           'postcss-loader',
-          'sass-loader',
         ],
       },
       {
@@ -55,28 +55,9 @@ module.exports = {
     globalObject: 'this',
   },
   resolve: {
-    /* alias: {
-      'react/jsx-runtime': require.resolve('react/jsx-runtime'),
-    }, */
     extensions: ['.ts', '.tsx', '.js'],
   },
   plugins: [
     new MiniCssExtractPlugin({ filename: 'widget.css' }),
-    new CopyPlugin({
-      patterns: [
-        {
-          from: 'src/*.scss',
-          to: 'styles.scss',
-          transformAll(assets) {
-            const concatenatedAssets = assets.reduce((accumulator, asset) => {
-              const content = asset.data.toString().replace(/@import ([^\n]+)\n/g, '').trim();
-
-              return `${accumulator}${content}\n\n`;
-            }, '').trim();
-            return `${concatenatedAssets}\n`;
-          },
-        },
-      ],
-    }),
   ],
 };

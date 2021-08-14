@@ -1,7 +1,7 @@
 import type { FunctionComponent } from 'react';
 import { yiq } from 'yiq';
 import type { HexColor } from './utils';
-import styles from './widget.scss';
+import styles from './widget.css';
 
 /**
  * @internal

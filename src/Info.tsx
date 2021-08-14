@@ -1,5 +1,5 @@
 import type { FunctionComponent } from 'react';
-import styles from './widget.scss';
+import styles from './widget.css';
 
 export interface InfoProps {
   paletteName?: string;

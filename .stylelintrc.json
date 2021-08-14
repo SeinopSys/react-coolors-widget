@@ -29,5 +29,5 @@
       }
     ]
   },
-  "ignoreFiles": ["dist/index.css", "README.md"]
+  "ignoreFiles": ["dist/widget.css", "README.md"]
 }
