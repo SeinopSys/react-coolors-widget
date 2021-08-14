@@ -1,0 +1,6 @@
+/*.tgz
+/.eslintcache
+/.idea
+/coverage
+/dist
+/node_modules

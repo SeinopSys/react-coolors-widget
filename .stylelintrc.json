@@ -1,0 +1,33 @@
+{
+  "extends": "stylelint-config-standard",
+  "plugins": [
+    "stylelint-order",
+    "stylelint-scss"
+  ],
+  "rules": {
+    "order/order": [
+      "at-rules",
+      "custom-properties",
+      "dollar-variables",
+      "declarations",
+      "rules"
+    ],
+    "no-descending-specificity": null,
+    "order/properties-alphabetical-order": true,
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": true,
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "ignoreAtRules": ["else", "if"]
+      }
+    ],
+    "block-closing-brace-newline-after": [
+      "always",
+      {
+        "ignoreAtRules": ["if"]
+      }
+    ]
+  },
+  "ignoreFiles": ["dist/index.css", "README.md"]
+}
