@@ -5,9 +5,6 @@ import { yiq } from 'yiq';
 import type { HexColor } from './utils';
 import styles from './widget.css';
 
-/**
- * @internal
- */
 export interface ColorProps {
   color: HexColor;
   onColorClick?: false | ((e: MouseEvent<HTMLButtonElement>, text: string) => void);
