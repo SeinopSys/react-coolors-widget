@@ -7,8 +7,9 @@
   --react-coolors-font-size: 14px;
   --react-coolors-hover-basis: 80px;
   --react-coolors-info-height: 36px;
-  --react-coolors-link: #06f;
-  --react-coolors-widget-font: inherit;
+  --react-coolors-info-link: #06f;
+  --react-coolors-info-link-hover-decoration: underline;
+  --react-coolors-widget-font: sans-serif;
   --react-coolors-widget-bg: #fff;
   --react-coolors-widget-height: 150px;
   --react-coolors-widget-shadow: rgba(0, 0, 0, 0.11);
@@ -24,11 +25,13 @@
   overflow: hidden;
 
   .colors {
+    all: initial;
     display: flex;
     height: calc(var(--react-coolors-widget-height) - var(--react-coolors-info-height));
     width: 100%;
 
     .color-box {
+      all: initial;
       box-shadow: inset var(--react-coolors-color-shadow) 0 1px, inset var(--react-coolors-color-shadow) 0 -1px;
       cursor: pointer;
       flex-basis: 1px;
@@ -64,7 +67,7 @@
         color: var(--react-coolors-color-text-dark);
         cursor: pointer;
         display: block;
-        font-family: sans-serif;
+        font-family: var(--react-coolors-widget-font);
         font-size: 15px;
         -webkit-font-smoothing: antialiased;
         font-weight: 600;
@@ -80,6 +83,7 @@
   }
 
   .info {
+    all: initial;
     display: flex;
     height: var(--react-coolors-info-height);
     justify-content: space-between;
@@ -89,6 +93,7 @@
 
   .info-name {
     all: initial;
+    font-family: var(--react-coolors-widget-font);
     font-size: var(--react-coolors-font-size);
     -webkit-font-smoothing: antialiased;
     line-height: var(--react-coolors-info-height);
@@ -98,8 +103,10 @@
   }
 
   .info-link {
-    color: var(--react-coolors-link);
+    all: initial;
+    color: var(--react-coolors-info-link);
     cursor: pointer;
+    font-family: var(--react-coolors-widget-font);
     font-size: var(--react-coolors-font-size);
     line-height: var(--react-coolors-info-height);
     margin-left: 20px;
@@ -107,7 +114,7 @@
     white-space: nowrap;
 
     &:hover {
-      text-decoration: underline;
+      text-decoration: var(--react-coolors-info-link-hover-decoration);
     }
   }
 }

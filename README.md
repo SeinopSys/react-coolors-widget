@@ -23,7 +23,7 @@ The full list of custom properties and their defaults are at the top of [widget.
 @import url('~react-coolors-widget/dist/widget.css');
 
 .my-widget-class {
-  --react-coolors-link: salmon;
+  --react-coolors-info-link: salmon;
   --react-coolors-widget-bg: black;
   --react-coolors-border-radius: 0;
   --react-coolors-font-size: 1rem;
