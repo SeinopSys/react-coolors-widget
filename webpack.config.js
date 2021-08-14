@@ -18,16 +18,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss?$/,
+        test: /\.scss$/,
         exclude: /node_modules/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
             options: {
-              esModule: false,
+              importLoaders: 1,
+              modules: true,
             },
           },
-          'css-loader',
           'postcss-loader',
           'sass-loader',
         ],
