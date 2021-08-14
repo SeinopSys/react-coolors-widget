@@ -1,6 +1,6 @@
 {
   "name": "react-coolors-widget",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Unofficial React implementation of the Coolors.co widget",
   "main": "dist/index.js",
   "files": [
