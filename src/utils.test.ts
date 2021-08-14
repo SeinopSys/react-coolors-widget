@@ -1,4 +1,4 @@
-import { CoolorsPaletteWidgetError } from './CoolorsPaletteWidgetError';
+import { CoolorsWidgetError } from './CoolorsWidgetError';
 import { normalizeColor } from './utils';
 
 describe('utils', () => {
@@ -45,17 +45,17 @@ describe('utils', () => {
 
     describe('test invalid values', () => {
       it('should throw on multiple # symbols', () => {
-        expect(() => normalizeColor('##ccc')).toThrowError(new CoolorsPaletteWidgetError('Malformed color: ##ccc'));
-        expect(() => normalizeColor('##abcdef')).toThrowError(new CoolorsPaletteWidgetError('Malformed color: ##abcdef'));
-        expect(() => normalizeColor('##ACD234')).toThrowError(new CoolorsPaletteWidgetError('Malformed color: ##ACD234'));
+        expect(() => normalizeColor('##ccc')).toThrowError(new CoolorsWidgetError('Malformed color: ##ccc'));
+        expect(() => normalizeColor('##abcdef')).toThrowError(new CoolorsWidgetError('Malformed color: ##abcdef'));
+        expect(() => normalizeColor('##ACD234')).toThrowError(new CoolorsWidgetError('Malformed color: ##ACD234'));
       });
 
       it('should throw on invalid length', () => {
-        expect(() => normalizeColor('#f')).toThrowError(new CoolorsPaletteWidgetError('Malformed color: #f'));
-        expect(() => normalizeColor('#ab')).toThrowError(new CoolorsPaletteWidgetError('Malformed color: #ab'));
-        expect(() => normalizeColor('#cccc')).toThrowError(new CoolorsPaletteWidgetError('Malformed color: #cccc'));
-        expect(() => normalizeColor('#abcd1')).toThrowError(new CoolorsPaletteWidgetError('Malformed color: #abcd1'));
-        expect(() => normalizeColor('#0123456789')).toThrowError(new CoolorsPaletteWidgetError('Malformed color: #0123456789'));
+        expect(() => normalizeColor('#f')).toThrowError(new CoolorsWidgetError('Malformed color: #f'));
+        expect(() => normalizeColor('#ab')).toThrowError(new CoolorsWidgetError('Malformed color: #ab'));
+        expect(() => normalizeColor('#cccc')).toThrowError(new CoolorsWidgetError('Malformed color: #cccc'));
+        expect(() => normalizeColor('#abcd1')).toThrowError(new CoolorsWidgetError('Malformed color: #abcd1'));
+        expect(() => normalizeColor('#0123456789')).toThrowError(new CoolorsWidgetError('Malformed color: #0123456789'));
       });
     });
   });

@@ -1,8 +1,8 @@
 import { ComponentType, useMemo } from 'react';
 import { ColorsProps } from './Colors';
-import { CoolorsPaletteWidgetError } from './CoolorsPaletteWidgetError';
+import { CoolorsWidgetError } from './CoolorsWidgetError';
 
-export type CoolorsLinkComponent = ComponentType<ColorsProps>;
+export type CoolorsLinkComponent = ComponentType<Pick<ColorsProps, 'colors'>>;
 
 /**
  * The base URL of the Coolors.co website, extracted for clarity & future testing use
@@ -26,7 +26,7 @@ export const DefaultLinkComponent: CoolorsLinkComponent = ({
 }) => {
   const mappedColors = useMemo(() => colors.map(c => c.substring(1).toLowerCase()), [colors]);
   if (mappedColors.length > MAX_COLOR_COUNT) {
-    throw new CoolorsPaletteWidgetError(`More than ${MAX_COLOR_COUNT} colors will result in a 404 page`);
+    throw new CoolorsWidgetError(`More than ${MAX_COLOR_COUNT} colors will result in a 404 page`);
   }
   return <a href={WEBSITE_BASE_URL + mappedColors.join('-')} target="_blank" rel="noreferrer noopener">{children}</a>;
 };

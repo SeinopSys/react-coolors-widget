@@ -1,6 +1,8 @@
 /*.tgz
 /.eslintcache
 /.idea
+/.nyc_output
 /coverage
 /dist
 /node_modules
+/src/*.css.d.ts

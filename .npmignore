@@ -4,11 +4,13 @@
 /.eslintrc
 /.husky
 /.idea
+/.nyc_output
 /.stylelintrc.json
-/coverage
 /commitlint.config.js
+/coverage
 /jest.config.js
 /node_modules
 /postcss.config.js
+/src
 /tsconfig.test.json
 /webpack.config.js

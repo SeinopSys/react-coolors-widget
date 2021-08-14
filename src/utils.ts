@@ -1,4 +1,4 @@
-import { CoolorsPaletteWidgetError } from './CoolorsPaletteWidgetError';
+import { CoolorsWidgetError } from './CoolorsWidgetError';
 
 const colorRegex = /^#?(([\dA-F]{3})([\dA-F]{3})?)$/i;
 
@@ -17,7 +17,7 @@ export type HexColor = `#${string}` & { typeBrand: typeof HexColorBrand };
  * @internal
  */
 export const normalizeColor = (color: string | `#${string}`): HexColor => {
-  if (!colorRegex.test(color)) throw new CoolorsPaletteWidgetError(`Malformed color: ${color}`);
+  if (!colorRegex.test(color)) throw new CoolorsWidgetError(`Malformed color: ${color}`);
   const matchedValue = color.replace(colorRegex, '$1').toUpperCase();
   return (`#${matchedValue.length === 3 ? matchedValue.replace(/(.)/g, '$1$1') : matchedValue}`) as HexColor;
 };
