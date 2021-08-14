@@ -4,8 +4,8 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/index.ts',
-  mode: 'development',
-  devtool: 'nosources-source-map',
+  mode: 'production',
+  devtool: 'source-map',
   externals: {
     react: {
       commonjs: 'react',
@@ -65,11 +65,12 @@ module.exports = {
           from: 'src/*.scss',
           to: 'styles.scss',
           transformAll(assets) {
-            return assets.reduce((accumulator, asset) => {
-              const content = asset.data;
+            const concatenatedAssets = assets.reduce((accumulator, asset) => {
+              const content = asset.data.toString().replace(/@import ([^\n]+)\n/g, '').trim();
 
-              return `${accumulator}${content}\n`;
-            }, '');
+              return `${accumulator}${content}\n\n`;
+            }, '').trim();
+            return `${concatenatedAssets}\n`;
           },
         },
       ],

@@ -15,11 +15,11 @@ $ yarn add react-coolors-widget
 
 ### Styling
 
-The full list of variables and their defaults are in [_variables.scss](./src/_variables.scss).
-
 #### SCSS
 
 To change the default compilation behavior of using native CSS custom properties, be sure to override the boolean SCSS variable shown below.
+
+The full list of SCSS variables and their defaults are in [_variables.scss](./src/_variables.scss).
 
 ```scss
 // Use SCSS variables to customize looks
@@ -30,6 +30,8 @@ $react-coolors-use-custom-properties: false;
 #### Pre-compiled CSS
 
 The precompiled CSS uses custom properties, all of which you can override in your own styles to change how the component looks by creating your own class.
+
+The full list of custom properties and their defaults are at the top of [widget.scss](./src/widget.scss).
 
 ```css
 @import url('~react-coolors-widget/dist/widget.css');

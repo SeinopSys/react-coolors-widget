@@ -1,3 +1,4 @@
+// Default variables
 $react-coolors-use-custom-properties: true !default;
 $react-coolors-link: #06f !default;
 $react-coolors-widget-bg: #fff !default;
@@ -10,17 +11,3 @@ $react-coolors-font-size: 14px !default;
 $react-coolors-hover-basis: 80px !default;
 $react-coolors-widget-height: 150px !default;
 $react-coolors-info-height: 36px !default;
-
-@if ($react-coolors-use-custom-properties) {
-  $react-coolors-link: var(--react-coolors-link);
-  $react-coolors-widget-bg: var(--react-coolors-widget-bg);
-  $react-coolors-widget-shadow: var(--react-coolors-widget-shadow);
-  $react-coolors-color-shadow: var(--react-coolors-color-shadow);
-  $react-coolors-color-text-dark: var(--react-coolors-color-text-dark);
-  $react-coolors-color-text-light: var(--react-coolors-color-text-light);
-  $react-coolors-border-radius: var(--react-coolors-border-radius);
-  $react-coolors-font-size: var(--react-coolors-font-size);
-  $react-coolors-hover-basis: var(--react-coolors-hover-basis);
-  $react-coolors-widget-height: var(--react-coolors-widget-height);
-  $react-coolors-info-height: var(--react-coolors-info-height);
-}

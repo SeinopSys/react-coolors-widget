@@ -1,37 +1,61 @@
-@import "_variables.scss";
+@import "variables";
 
+// Conditional styles
+$__react-coolors-link: $react-coolors-link;
+$__react-coolors-widget-bg: $react-coolors-widget-bg;
+$__react-coolors-widget-shadow: $react-coolors-widget-shadow;
+$__react-coolors-color-shadow: $react-coolors-color-shadow;
+$__react-coolors-color-text-dark: $react-coolors-color-text-dark;
+$__react-coolors-color-text-light: $react-coolors-color-text-light;
+$__react-coolors-border-radius: $react-coolors-border-radius;
+$__react-coolors-font-size: $react-coolors-font-size;
+$__react-coolors-hover-basis: $react-coolors-hover-basis;
+$__react-coolors-widget-height: $react-coolors-widget-height;
+$__react-coolors-info-height: $react-coolors-info-height;
 @if ($react-coolors-use-custom-properties) {
+  $__react-coolors-link: var(--react-coolors-link);
+  $__react-coolors-widget-bg: var(--react-coolors-widget-bg);
+  $__react-coolors-widget-shadow: var(--react-coolors-widget-shadow);
+  $__react-coolors-color-shadow: var(--react-coolors-color-shadow);
+  $__react-coolors-color-text-dark: var(--react-coolors-color-text-dark);
+  $__react-coolors-color-text-light: var(--react-coolors-color-text-light);
+  $__react-coolors-border-radius: var(--react-coolors-border-radius);
+  $__react-coolors-font-size: var(--react-coolors-font-size);
+  $__react-coolors-hover-basis: var(--react-coolors-hover-basis);
+  $__react-coolors-widget-height: var(--react-coolors-widget-height);
+  $__react-coolors-info-height: var(--react-coolors-info-height);
+
   :root {
-    --react-coolors-link: $react-coolors-link;
-    --react-coolors-widget-bg: $react-coolors-widget-bg;
-    --react-coolors-widget-shadow: $react-coolors-widget-shadow;
-    --react-coolors-color-shadow: $react-coolors-color-shadow;
-    --react-coolors-color-text-dark: $react-coolors-color-text-dark;
-    --react-coolors-color-text-light: $react-coolors-color-text-light;
-    --react-coolors-border-radius: $react-coolors-border-radius;
-    --react-coolors-font-size: $react-coolors-font-size;
-    --react-coolors-hover-basis: $react-coolors-hover-basis;
-    --react-coolors-widget-height: $react-coolors-widget-height;
-    --react-coolors-info-height: $react-coolors-info-height;
+    --react-coolors-link: #{$react-coolors-link};
+    --react-coolors-widget-bg: #{$react-coolors-widget-bg};
+    --react-coolors-widget-shadow: #{$react-coolors-widget-shadow};
+    --react-coolors-color-shadow: #{$react-coolors-color-shadow};
+    --react-coolors-color-text-dark: #{$react-coolors-color-text-dark};
+    --react-coolors-color-text-light: #{$react-coolors-color-text-light};
+    --react-coolors-border-radius: #{$react-coolors-border-radius};
+    --react-coolors-font-size: #{$react-coolors-font-size};
+    --react-coolors-hover-basis: #{$react-coolors-hover-basis};
+    --react-coolors-widget-height: #{$react-coolors-widget-height};
+    --react-coolors-info-height: #{$react-coolors-info-height};
   }
 }
 
 .coolors-palette-widget {
   all: initial;
-  background: $react-coolors-widget-bg;
-  border-radius: $react-coolors-border-radius;
-  box-shadow: inset $react-coolors-widget-shadow 0 0 0 1px;
+  background: $__react-coolors-widget-bg;
+  border-radius: $__react-coolors-border-radius;
+  box-shadow: inset $__react-coolors-widget-shadow 0 0 0 1px;
   display: block;
-  height: $react-coolors-widget-height;
+  height: $__react-coolors-widget-height;
   overflow: hidden;
 
   .colors {
     display: flex;
-    height: calc(#{$react-coolors-widget-height} - #{$react-coolors-info-height});
+    height: calc(#{$__react-coolors-widget-height} - #{$__react-coolors-info-height});
     width: 100%;
 
     .color-box {
-      box-shadow: inset $react-coolors-color-shadow 0 1px, inset $react-coolors-color-shadow 0 -1px;
+      box-shadow: inset $__react-coolors-color-shadow 0 1px, inset $__react-coolors-color-shadow 0 -1px;
       cursor: pointer;
       flex-basis: 1px;
       flex-grow: 1;
@@ -40,17 +64,17 @@
       transition: all 0.1s ease-in-out;
 
       &:first-child {
-        border-radius: $react-coolors-border-radius 0 0;
-        box-shadow: inset $react-coolors-color-shadow 1px 1px, inset $react-coolors-color-shadow 0 -1px;
+        border-radius: $__react-coolors-border-radius 0 0;
+        box-shadow: inset $__react-coolors-color-shadow 1px 1px, inset $__react-coolors-color-shadow 0 -1px;
       }
 
       &:last-child {
-        border-radius: 0 $react-coolors-border-radius 0 0;
-        box-shadow: inset $react-coolors-color-shadow -1px 1px, inset $react-coolors-color-shadow 0 -1px;
+        border-radius: 0 $__react-coolors-border-radius 0 0;
+        box-shadow: inset $__react-coolors-color-shadow -1px 1px, inset $__react-coolors-color-shadow 0 -1px;
       }
 
       &:hover {
-        flex-basis: $react-coolors-hover-basis;
+        flex-basis: $__react-coolors-hover-basis;
 
         .color-code {
           opacity: 1;
@@ -58,12 +82,12 @@
       }
 
       &.is-light .color-code {
-        color: $react-coolors-color-text-light;
+        color: $__react-coolors-color-text-light;
       }
 
       .color-code {
         all: initial;
-        color: $react-coolors-color-text-dark;
+        color: $__react-coolors-color-text-dark;
         cursor: pointer;
         display: block;
         font-family: sans-serif;
@@ -83,7 +107,7 @@
 
   .info {
     display: flex;
-    height: $react-coolors-info-height;
+    height: $__react-coolors-info-height;
     justify-content: space-between;
     padding: 0 15px;
     position: relative;
@@ -91,19 +115,19 @@
 
   .info-name {
     all: initial;
-    font-size: $react-coolors-font-size;
+    font-size: $__react-coolors-font-size;
     -webkit-font-smoothing: antialiased;
-    line-height: $react-coolors-info-height;
+    line-height: $__react-coolors-info-height;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 
   .info-link {
-    color: $react-coolors-link;
+    color: $__react-coolors-link;
     cursor: pointer;
-    font-size: $react-coolors-font-size;
-    line-height: $react-coolors-info-height;
+    font-size: $__react-coolors-font-size;
+    line-height: $__react-coolors-info-height;
     margin-left: 20px;
     text-decoration: none;
     white-space: nowrap;
