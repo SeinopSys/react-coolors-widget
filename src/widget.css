@@ -3,14 +3,15 @@
   --react-coolors-border-radius: 14px;
   --react-coolors-color-shadow: rgba(0, 0, 0, 0.08);
   --react-coolors-color-text-dark: #fff;
+  --react-coolors-color-text-font: var(--react-coolors-widget-font);
   --react-coolors-color-text-light: #000;
   --react-coolors-font-size: 14px;
   --react-coolors-hover-basis: 80px;
   --react-coolors-info-height: 36px;
-  --react-coolors-info-link: #06f;
   --react-coolors-info-link-hover-decoration: underline;
-  --react-coolors-widget-font: sans-serif;
+  --react-coolors-info-link: #06f;
   --react-coolors-widget-bg: #fff;
+  --react-coolors-widget-font: sans-serif;
   --react-coolors-widget-height: 150px;
   --react-coolors-widget-shadow: rgba(0, 0, 0, 0.11);
 }
@@ -67,7 +68,7 @@
         color: var(--react-coolors-color-text-dark);
         cursor: pointer;
         display: block;
-        font-family: var(--react-coolors-widget-font);
+        font-family: var(--react-coolors-color-text-font);
         font-size: 15px;
         -webkit-font-smoothing: antialiased;
         font-weight: 600;
