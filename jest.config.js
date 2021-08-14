@@ -1,10 +1,22 @@
 module.exports = {
+  collectCoverage: true,
   collectCoverageFrom: [
-    '**/*.{ts,tsx}',
-    '!**/*.d.ts',
-    '!**/node_modules/**',
-    '!**/*.test.{ts,tsx}',
+    'src/**/*.{ts,tsx}',
   ],
+  coveragePathIgnorePatterns: [
+    '/node_modules/',
+    '/.*\\.test\\.(ts|tsx)$',
+    '.*\\.d\\.ts$',
+  ],
+  coverageDirectory: '<rootDir>/coverage/',
+  coverageThreshold: {
+    global: {
+      statements: 19,
+      branches: 33,
+      functions: 14,
+      lines: 20,
+    },
+  },
   preset: 'ts-jest',
   testEnvironment: 'node',
   testPathIgnorePatterns: ['/node_modules/', '/dist/'],
