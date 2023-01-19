@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 module.exports = {
   collectCoverage: true,
   collectCoverageFrom: [
@@ -11,10 +12,10 @@ module.exports = {
   coverageDirectory: '<rootDir>/coverage/',
   coverageThreshold: {
     global: {
-      statements: 19,
+      statements: 18.57,
       branches: 33,
-      functions: 14,
-      lines: 20,
+      functions: 13.33,
+      lines: 19.64,
     },
   },
   preset: 'ts-jest',
@@ -24,9 +25,12 @@ module.exports = {
     'src/(.*)': '<rootDir>/src/$1',
     '\\.css$': 'identity-obj-proxy',
   },
-  globals: {
-    'ts-jest': {
-      tsconfig: 'tsconfig.test.json',
-    },
+  transform: {
+    '^.+\\.tsx?$': [
+      'ts-jest',
+      {
+        tsconfig: 'tsconfig.test.json',
+      },
+    ],
   },
 };

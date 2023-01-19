@@ -1,8 +1,8 @@
-import { ComponentType, useMemo } from 'react';
+import { ComponentType, PropsWithChildren, useMemo } from 'react';
 import { ColorsProps } from './Colors';
 import { CoolorsWidgetError } from './CoolorsWidgetError';
 
-export type CoolorsLinkComponent = ComponentType<Pick<ColorsProps, 'colors'>>;
+export type CoolorsLinkComponent = ComponentType<PropsWithChildren<Pick<ColorsProps, 'colors'>>>;
 
 /**
  * The base URL of the Coolors.co website, extracted for clarity & future testing use

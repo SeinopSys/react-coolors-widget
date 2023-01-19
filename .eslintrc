@@ -40,6 +40,8 @@
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
+    "react/function-component-definition": "off",
+    "react/require-default-props": "off",
     "@typescript-eslint/indent": [
       "error",
       2,

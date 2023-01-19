@@ -1,4 +1,4 @@
-import type { FunctionComponent } from 'react';
+import type { FunctionComponent, PropsWithChildren } from 'react';
 import styles from './widget.css';
 
 export interface InfoProps {
@@ -8,7 +8,7 @@ export interface InfoProps {
 /**
  * @internal
  */
-export const Info: FunctionComponent<InfoProps> = ({
+export const Info: FunctionComponent<PropsWithChildren<InfoProps>> = ({
   paletteName,
   children,
 }) => (
