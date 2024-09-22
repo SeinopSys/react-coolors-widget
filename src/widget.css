@@ -12,6 +12,7 @@
   --react-coolors-info-link-hover-decoration: underline;
   --react-coolors-info-link-hover-color: var(--react-coolors-info-link);
   --react-coolors-info-link: #06f;
+  --react-coolors-widget-color: inherit;
   --react-coolors-widget-bg: #fff;
   --react-coolors-widget-font: sans-serif;
   --react-coolors-widget-height: 150px;
@@ -20,6 +21,7 @@
 
 .coolors-palette-widget {
   all: initial;
+  color: var(--react-coolors-widget-color);
   background: var(--react-coolors-widget-bg);
   border-radius: var(--react-coolors-border-radius);
   box-shadow: inset var(--react-coolors-widget-shadow) 0 0 0 1px;
